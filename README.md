@@ -37,6 +37,12 @@ A Discord bot written in [discord.py](https://github.com/Rapptz/discord.py) for 
 
 ### Running
 
-```bash
-python3 impostor.py
-```
+1. Create a `.env` file with the following contents
+    ```
+    TOKEN="your_token"
+    ```
+
+2. Run the bot
+    ```bash
+    python3 impostor.py
+    ```
