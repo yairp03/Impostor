@@ -1,8 +1,11 @@
 from discord.ext import commands
 import discord
+import os
+from dotenv import load_dotenv
+load_dotenv()
+TOKEN = os.getenv('IMPOSTOR_TOKEN')
 intents = discord.Intents.default()
 intents.members = True
-TOKEN = 'NzYwNTc4MzA3MTk1NTM1Mzgx.X3OFvw.85qHdZ49PumchSd-2jjUJ-UdnC8'
 VOICE_CHANNEL_ID = 757998039985291268
 ADMIN_CHANNEL_ID = 760582768324509708
 BOT_ID = 760578307195535381
