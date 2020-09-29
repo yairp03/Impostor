@@ -36,6 +36,6 @@ A Discord bot written in [discord.py](https://github.com/Rapptz/discord.py) for 
 
 ### Running
 
-    ```bash
-    python3 impostor.py
-    ```
+```bash
+python3 impostor.py
+```
