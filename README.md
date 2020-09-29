@@ -1,7 +1,8 @@
 # Impostor
 
 A Discord bot written in [discord.py](https://github.com/Rapptz/discord.py) for managing [Among Us](https://store.steampowered.com/app/945360/Among_Us/) games.
-----
+
+---
 
 ### Installation
 
