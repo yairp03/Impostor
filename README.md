@@ -15,7 +15,11 @@ A Discord bot written in [discord.py](https://github.com/Rapptz/discord.py) for 
 2. `cd` into the main directory and create the virtual environment
 
     ```bash
+    # linux
     cd Impostor && python3 -m venv env
+
+    # windows
+    cd Impostor && python -m venv env
     ```
 
 3. Activate the virtual environment
