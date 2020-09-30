@@ -60,7 +60,8 @@ class AmongUs(commands.Cog):
                 await ctx.send(f'{member.mention} is already dead.')
             else:
                 self.deads.append(member)
-                print(self.deads)
+                print([m.nick for m in self.deads])
+                await member.edit(mute=True, reason='Muted in Among Us game.')
                 await ctx.send(f'{member.mention} has been killed.')
                     
 
