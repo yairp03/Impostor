@@ -5,7 +5,10 @@ import os
 
 
 class AmongUs(commands.Cog):
+    MANAGER_ROLE = ""
+    
     def __init__(self, bot):
+        global MANAGER_ROLE
         load_dotenv()
 
         self.bot = bot
@@ -13,25 +16,26 @@ class AmongUs(commands.Cog):
         self.TOKEN = os.getenv('IM_TOKEN')
         self.VOICE_CHANNEL_ID = int(os.getenv('IM_VC'))
         self.ADMIN_CHANNEL_ID = int(os.getenv('IM_ADMIN'))
+        MANAGER_ROLE = int(os.getenv("IM_MANAGER"))
         self.BOT_ID = 760578307195535381
     
     # mute all undead members
     @commands.command()
-    @commands.has_role('Game Manager')
+    @commands.has_role(MANAGER_ROLE)
     async def play(self, ctx):
         await self.handle_voice(ctx, True)
         await ctx.send('Muted everyone.')
 
     # unmute all undead members
     @commands.command()
-    @commands.has_role('Game Manager')
+    @commands.has_role(MANAGER_ROLE)
     async def meet(self, ctx):
         await self.handle_voice(ctx, False)
         await ctx.send('Unmuted undeads.')
 
     # unmute all and clear self.deads list
     @commands.command()
-    @commands.has_role('Game Manager')
+    @commands.has_role(MANAGER_ROLE)
     async def clear(self, ctx):
         self.deads.clear()
         await self.handle_voice(ctx, False)
@@ -39,13 +43,13 @@ class AmongUs(commands.Cog):
 
     # print self.deads list
     @commands.command()
-    @commands.has_role('Game Manager')
+    @commands.has_role(MANAGER_ROLE)
     async def dead(self, ctx):
         await ctx.send('Currently dead: ' + ', '.join([m.display_name for m in self.deads]))
 
     # add player to self.deads list
     @commands.command()
-    @commands.has_role('Game Manager')
+    @commands.has_role(MANAGER_ROLE)
     async def kill(self, ctx, player):
         try:
             member = await ctx.guild.fetch_member(int(player[3:-1]))
